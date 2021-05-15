@@ -1,0 +1,201 @@
+
+version: 2
+models:
+  - name: start_trips_station
+    description: "A model that computes all the trips that start from various stations at many time-granularities"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: year
+          description: "Year of the trip"
+          tests:
+              - not_null
+        - name: month
+          description: "Month of the trip"
+          tests:
+              - not_null
+        - name: day
+          description: "Day of the month of the trip"
+          tests:
+              - not_null
+        - name: hour
+          description: "Hour of the trip"
+          tests:
+              - not_null
+        - name: day_of_week
+          description: "Day-of-week of the trip"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name: start_trips
+          description: "Total number of trips that start in that timeslot"
+          tests:
+              - not_null
+  - name: end_trips_station
+    description: "A model that computes all the trips that end at various stations at many time-granularities"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: year
+          description: "Year of the trip"
+          tests:
+              - not_null
+        - name: month
+          description: "Month of the trip"
+          tests:
+              - not_null
+        - name: day
+          description: "Day of the month of the trip"
+          tests:
+              - not_null
+        - name: hour
+          description: "Hour of the trip"
+          tests:
+              - not_null
+        - name: day_of_week
+          description: "Day-of-week of the trip"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name: end_trips
+          description: "Total number of trips that end in that timeslot"
+          tests:
+              - not_null
+  - name: total_trips_station
+    description: "A model that computes all the trips that end at various stations at many time-granularities"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: year
+          description: "Year of the trip"
+          tests:
+              - not_null
+        - name: month
+          description: "Month of the trip"
+          tests:
+              - not_null
+        - name: day
+          description: "Day of the month of the trip"
+          tests:
+              - not_null
+        - name: hour
+          description: "Hour of the trip"
+          tests:
+              - not_null
+        - name: day_of_week
+          description: "Day-of-week of the trip"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name: end_trips
+          description: "Total number of trips that end in that timeslot"
+          tests:
+              - not_null
+        - name: start_trips
+          description: "Total number of trips that start in that timeslot"
+          tests:
+              - not_null
+  - name: station_consumption_rate
+    description: "A model that computes average consumption rate at various stations at day_of_week_type and hour_type granularity"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name: average_consumption_per_hr
+          description: "Average consumption rate"
+          tests:
+              - not_null
+  - name: station_bike_dock_availability
+    description: "A model that computes availability of bikes and docks"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: year
+          description: "Year of the trip"
+          tests:
+              - not_null
+        - name: month
+          description: "Month of the trip"
+          tests:
+              - not_null
+        - name: day
+          description: "Day of the month of the trip"
+          tests:
+              - not_null
+        - name: hour
+          description: "Hour of the trip"
+          tests:
+              - not_null
+        - name: day_of_week
+          description: "Day-of-week of the trip"
+          tests:
+              - not_null
+        - name: bike_zero_diff_frac
+          description: "Fraction of hour where the bike availability is zero"
+          tests:
+              - not_null
+        - name: dock_zero_diff_frac
+          description: "Fraction of hour where the dock availability is zero"
+          tests:
+              - not_null
+  - name: station_bike_dock_slots
+    description: "A model that computes average bike_zero and dock_zero hour fractions at various stations at day_of_week_type and hour_type granularity"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name:  average_bike_zero
+          description: "Average fraction of hour where bikes are zero"
+          tests:
+              - not_null
+        - name:  average_dock_zero
+          description: "Average fraction of hour where docks are zero"
+          tests:
+              - not_null
