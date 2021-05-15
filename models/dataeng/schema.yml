@@ -199,3 +199,134 @@ models:
           description: "Average fraction of hour where docks are zero"
           tests:
               - not_null
+  - name: loss
+    description: "A model that computes bikes_needed or docks_needed per hour in the time - day type slots"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name:  average_extra_bikes_needed
+          description: "Average extra bikes needed per hour"
+          tests:
+              - not_null
+        - name:  average_extra_docks_needed
+          description: "Average extra docks needed per hour"
+          tests:
+              - not_null
+  - name: top_10_bike_starved
+    description: "A model that computes top 10 time - day type slots with extra bikes needed"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name:  average_extra_bikes_needed
+          description: "Average extra bikes needed per hour"
+          tests:
+              - not_null
+  - name: top_10_bike_excess
+    description: "A model that computes top 10 time - day type slots with extra bikes needed"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name:  excess_bikes
+          description: "Average excess bikes per hour"
+          tests:
+              - not_null
+  - name: top_10_docks_starved
+    description: "A model that computes top 10 time - day type slots with extra docks needed"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name:  average_extra_docks_needed
+          description: "Average extra bikes needed per hour"
+          tests:
+              - not_null
+  - name: top_10_docks_excess
+    description: "A model that computes top 10 time - day type slots with extra bikes needed"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: day_of_week_type
+          description: "Weekday/Weekend"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Night/Morning/Afternoon/Evening"
+          tests:
+              - not_null
+        - name:  excess_docks
+          description: "Average excess docks per hour"
+          tests:
+              - not_null
+  - name: volume_rank
+    description: "A model that computes volume based rank of all stations (incremental table)"
+    columns:
+        - name: station_id
+          description: "Id of the bike station"
+          tests:
+              - not_null
+        - name: year
+          description: "Year of the trip"
+          tests:
+              - not_null
+        - name: month
+          description: "Month of the trip"
+          tests:
+              - not_null
+        - name: day
+          description: "Day of the month of the trip"
+          tests:
+              - not_null
+        - name: hour_type
+          description: "Hour type of the trip"
+          tests:
+              - not_null
+        - name: trip_volume
+          description: "Volume of trips"
+          tests:
+              - not_null
+        - name: rank
+          description: "Rank based on volume of trips"
+          tests:
+              - not_null
+        
